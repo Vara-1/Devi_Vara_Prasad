@@ -1,178 +1,154 @@
 body {
-  background: #f7f7f7;
-margin: 0;
-  padding: 0;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
-.container{
-    display: flex;
-    width: auto auto auto;
-    height: 70%;
-    border: 0px;
-    background-color: white;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-}
-.item1{
-    background-color: white;
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    margin: 10px;
-}
-.item2{
-    background-color: #770ae3;
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    margin: 10px;
-}
-.item3{
-    background-color: white;
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    margin: 10px;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch; 
-  gap: 2rem;
-  padding: 3rem 1rem;
+.container {
+  display: grid;
+  gap: 40px;
+  justify-items: center;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  grid-template-columns: 1fr;
 }
 
 .profile-card {
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-radius: 32px;
   width: 320px;
-  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: box-shadow 0.2s;
-  min-height: 370px; 
-  height: 100%;      
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: none;
 }
 
 .profile-card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.13);
+  transform: translateY(-8px) scale(1.03);
 }
 
 .profile-header {
-  background: #770ae3;
-  height: 100px;
-  width: 100%;
-  position: relative;
+  background: #8a14e5dc;
+  height: 110px;
 }
 
 .profile-img {
-  position: relative;
-  top: -50px;
-  margin-bottom: -40px;
-  z-index: 1;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #8a14e5dc;
+  position: absolute;
+  left: 50%;
+  top: 55px;
+  transform: translateX(-50%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-img img {
-  width: 100px;
-  height: 100px;
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
-  border: 5px solid #fff;
   object-fit: cover;
-  background: #eee;
+}
+
+.side-icons {
+  position: absolute;
+  right: 20px;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-icons i {
+  font-size: 20px;
+  color: black; 
+  cursor: pointer;
 }
 
 .profile-info {
-  padding: 0 1.5rem 2rem 1.5rem;
-  text-align: center;
-  margin-top: 10px;
+  margin-top: 80px;
+  padding: 0 24px 32px 24px;
 }
 
 .profile-info h2 {
   font-size: 1.3rem;
   font-weight: 600;
-  margin: 0.5rem 0 0.2rem 0;
-  color: #333;
+  margin: 18px 0 4px 0;
+  color: #222;
 }
 
 .profile-info p {
-  color: #888;
+  color: #444;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .profile-stars {
-  display: flex;
-  justify-content: center;
-  gap: 0.3rem;
-  margin-bottom: 1.2rem;
-  font-size: 1.5rem;
+  margin-bottom: 18px;
 }
 
-.star {
-  color: white;
-  text-shadow: 0 1px 2px ;
+.profile-stars i {
+  color: #bbb;
+  font-size: 1.3em;
+  margin: 0 2px;
+}
+
+.profile-card:nth-child(1) .profile-stars i:nth-child(-n+4) {
+  color: yellow;
+}
+
+.profile-card:nth-child(2) .profile-stars i:nth-child(-n+3) {
+  color: yellow;
+}
+
+.profile-card:nth-child(3) .profile-stars i:nth-child(-n+3) {
+  color: yellow;
 }
 
 .profile-actions {
   display: flex;
+  gap: 16px;
   justify-content: center;
-  gap: 1rem;
 }
 
-.about-btn,
-.hire-btn {
-  background: #770ae3;
+.profile-actions button {
+  background: #8a14e5dc;
   color: #fff;
   border: none;
-  border-radius: 22px;
-  padding: 0.7rem 2.2rem;
+  border-radius: 24px;
+  padding: 10px 28px;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(138,20,229,0.12);
+  transition: background 0.2s, color 0.2s;
 }
 
-.about-btn:hover,
-.hire-btn:hover {
-  background: #770ae3;
+.profile-actions button:hover {
+  background: #6c3fd1;
 }
 
-@media (max-width: 1200px) {
-  .card-container {
-    gap: 1.2rem;
-  }
-  .profile-card {
-    width: 270px;
+@media (max-width: 500px) {
+  .container {
+    grid-template-columns: 1fr;
   }
 }
-
-@media (max-width: 900px) {
-  .card-container {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .profile-card {
-    width: 90vw;
-    max-width: 350px;
+@media (min-width: 501px) and (max-width: 999px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
-@media (max-width: 600px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 0.5rem;
-  }
-  .profile-card {
-    width: 98vw;
-    max-width: 350px;
+@media (min-width: 1000px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
